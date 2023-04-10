@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authorize, only: %i[new create destroy]
 
   def index
-    @posts = post.all
+    @posts = Post.all
   end
 
   def new
