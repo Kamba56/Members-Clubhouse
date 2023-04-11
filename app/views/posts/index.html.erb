@@ -3,3 +3,7 @@
 <% @posts.each do |post| %>
   <p><%= post.text %><p>
 <% end %>
+
+<% if current_user %>
+  <%= link_to "Add new post", new_post_path %>
+<% end %>
