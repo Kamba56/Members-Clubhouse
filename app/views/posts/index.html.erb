@@ -1,7 +1,14 @@
 <h1>Users thoughts/qoutes</h1>
 
 <% @posts.each do |post| %>
-  <p><%= post.text %><p>
+  <div>
+    <p><%= post.text %><p>
+
+    <% if current_user %>
+      <h5>By: <%= post.user.name %></h5>
+      <%= button_to "Delete", post, method: :delete, disabled: current_user != post.user %>
+    <% end %>
+  </div>
 <% end %>
 
 <% if current_user %>
