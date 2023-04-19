@@ -29,13 +29,11 @@ ul {
 }
 
 a {
-  @include flex(row, center, center);
-
   text-decoration: none;
   color: inherit;
 }
 
-button {
+button, a {
   cursor: pointer;
 }
 
@@ -75,4 +73,12 @@ header {
       }
     }
   }
+}
+
+.btn {
+  padding: 7px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: #5030E5;
+  border-radius: 6px;
 }
