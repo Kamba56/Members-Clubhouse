@@ -19,14 +19,14 @@
             <% if current_user %>
               <li>Hi, <span class="purple"><%= current_user.name %></span></li>
               <li>
-                <%= link_to "Log out", logout_path %>
+                <%= link_to "Log out", logout_path, class: "danger-text" %>
               </li>
             <% else %>
               <li>
-                <%= link_to "Sign Up", signup_path %>
+                <%= link_to "Sign Up", signup_path, class: "purple" %>
               </li>
               <li>
-                <%= link_to "Login", login_path %>
+                <%= link_to "Login", login_path, class: "green" %>
               </li>
             <% end %>
           </ul>

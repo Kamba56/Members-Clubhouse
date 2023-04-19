@@ -49,6 +49,14 @@ button, a {
   color: #5030E5;
 }
 
+.danger-text {
+  color: rgb(214, 0, 0);
+}
+
+.green {
+  color: green;
+}
+
 header {
   padding: 10px 30px;
   width: 100%;
@@ -138,22 +146,31 @@ main {
     }
   }
 
-  .card {
-    @include flex(column, center, center, 6px, 0);
-    padding: 15px 15px;
-    background: #5030E510;
-    border-radius: 16px;
-    text-align: center;
+  .cards {
+    @include flex(row, center, center, 30px, 30px);
+    flex-wrap: wrap;
 
-    p {
-      height: fit-content;
-      min-height: 60px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-              line-clamp: 3;
-      -webkit-box-orient: vertical;
+    .card {
+      @include flex(column, center, center, 6px, 0);
+      padding: 15px 15px;
+      background: #5030E510;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 310px;
+
+      p {
+        height: fit-content;
+        min-height: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+                line-clamp: 4;
+        -webkit-box-orient: vertical;
+        &:hover {
+          display: block;
+        }
+      }
     }
   }
 }
