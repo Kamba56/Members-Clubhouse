@@ -1,6 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: red;
+  font-family: 'Inter', sans-serif;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($size, $line, $weight) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+}
+
+.margin-center {
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  @include flex(row, center, center);
+
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  padding: 10px 30px;
+  width: 100%;
+  border-bottom: .5px solid #5030E5;
+  
+  div {
+    @include flex(row, space-between, center);
+    max-width: 1366px;
+    width: 100%;
+    
+    .logo {
+      @include font(20px, 24px, 600);
+      color: #0D062D;
+    }
+
+    nav {
+      width: fit-content;
+      ul {
+        @include flex(row, center, center);
+        width: fit-content;
+
+        li {
+          width: fit-content;
+          a {
+            display: block;
+            padding: 7px 15px;
+            transition: color 1s;
+            @include font(14px, 19px, 400);
+            &:hover {
+              color: #5030E5;
+            }
+          }
+        }
+      }
+    }
+  }
 }
