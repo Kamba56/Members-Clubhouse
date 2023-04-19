@@ -1,0 +1,36 @@
+<section class="form-section">
+  <h2 class="title margin-center">Sign Up</h2>
+
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error-messages">
+        <h4>Form is invalid</h4>
+        <ul>
+          <% @user.errors.full_messages.each do |m| %>
+            <li><%= m %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email, required: true %>
+    </div>
+
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, required: true %>
+    </div>
+
+    <div>
+      <%= f.submit "Sign Up", class: "btn" %>
+    </div>
+
+  <% end %>
+</section>
