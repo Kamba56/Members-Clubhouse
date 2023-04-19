@@ -1,16 +1,20 @@
-<h1>Users thoughts/qoutes</h1>
+<main>
+  <h1 class="title">Users thoughts/qoutes</h1>
+  <section class="cards">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <p><%= post.text %></p>
 
-<% @posts.each do |post| %>
-  <div>
-    <p><%= post.text %><p>
-
-    <% if current_user %>
-      <h5>By: <%= post.user.name %></h5>
-      <%= button_to "Delete", post, method: :delete, disabled: current_user != post.user %>
+        <% if current_user %>
+          <h5>By: <span class="purple"><%= post.user.name %></span></h5>
+          <%= button_to "Delete", post, method: :delete, disabled: current_user != post.user, class: "btn danger" %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
-<% end %>
+  </section>
 
-<% if current_user %>
-  <%= link_to "Add new post", new_post_path %>
-<% end %>
+  <% if current_user %>
+    <%= link_to "Add new post", new_post_path, class: "btn" %>
+  <% end %>
+
+</main>
