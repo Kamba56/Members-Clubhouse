@@ -8,7 +8,7 @@
 }
 
 body {
-  color: #0D062D;
+  color: #0d062d;
 }
 
 @mixin flex($direction, $justify, $align, $rgap, $cgap) {
@@ -46,7 +46,7 @@ button, a, input[type="submit"] {
 }
 
 .purple {
-  color: #5030E5;
+  color: #5030e5;
 }
 
 .danger-text {
@@ -60,7 +60,7 @@ button, a, input[type="submit"] {
 header {
   padding: 10px 30px;
   width: 100%;
-  border-bottom: .5px solid #5030E5;
+  border-bottom: .5px solid #5030e5;
   
   div {
     @include flex(row, space-between, center, 0, 0);
@@ -85,7 +85,7 @@ header {
             transition: color 1s;
             @include font(14px, 19px, 400);
             &:hover {
-              color: #5030E5;
+              color: #5030e5;
             }
           }
         }
@@ -98,7 +98,7 @@ header {
   padding: 7px 20px;
   font-size: 16px;
   color: #fff;
-  background: #5030E5;
+  background: #5030e5;
   border-radius: 6px;
 
   &.danger {
@@ -106,8 +106,8 @@ header {
   }
 
   &:hover {
-    background: #5030E530;
-    color: #5030E5;
+    background: #5030e530;
+    color: #5030e5;
   }
 
   &:disabled {
@@ -132,8 +132,8 @@ main {
     .card {
       @include flex(column, center, center, 6px, 0);
       padding: 15px 15px;
-      border: .5px solid #5030E5;
-      background: #5030E510;
+      border: .5px solid #5030e5;
+      background: #5030e510;
       text-align: center;
       max-width: 310px;
 
@@ -159,14 +159,14 @@ main {
   padding: 10px 20px;
   position: relative;
   align-self: flex-start;
-  border-bottom: 3px solid #5030E5;
+  border-bottom: 3px solid #5030e5;
   width: 100%;
 
   &::before {
     content: "";
     height: 6px;
     width: 6px;
-    background: #5030E5;
+    background: #5030e5;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -195,8 +195,8 @@ main {
     div {
       width: 100%;
       input[type="text"], input[type="email"], textarea {
-        background: #5030E510;
-        border: .5px solid #5030E5;
+        background: #5030e510;
+        border: .5px solid #5030e5;
         height: 40px;
         width: 100%;
         display: block;
