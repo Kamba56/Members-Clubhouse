@@ -7,11 +7,17 @@
   font-family: 'Inter', sans-serif;
 }
 
-@mixin flex($direction, $justify, $align) {
+body {
+  color: #0D062D;
+}
+
+@mixin flex($direction, $justify, $align, $rgap, $cgap) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+  row-gap: $rgap;
+  column-gap: $cgap;
 }
 
 @mixin font($size, $line, $weight) {
@@ -35,6 +41,12 @@ a {
 
 button, a {
   cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.purple {
+  color: #5030E5;
 }
 
 header {
@@ -43,19 +55,18 @@ header {
   border-bottom: .5px solid #5030E5;
   
   div {
-    @include flex(row, space-between, center);
+    @include flex(row, space-between, center, 0, 0);
     max-width: 1366px;
     width: 100%;
     
     .logo {
       @include font(20px, 24px, 600);
-      color: #0D062D;
     }
 
     nav {
       width: fit-content;
       ul {
-        @include flex(row, center, center);
+        @include flex(row, center, center, 0, 0);
         width: fit-content;
 
         li {
@@ -81,4 +92,68 @@ header {
   color: #fff;
   background: #5030E5;
   border-radius: 6px;
+
+  &.danger {
+    background: rgb(214, 0, 0);
+  }
+
+  &:hover {
+    background: #5030E530;
+    color: #5030E5;
+  }
+
+  &:disabled {
+    background: #dfdfdf;
+    color: #7f7f7f;
+  }
+}
+
+main {
+  @include flex(column, center, center, 30px, 0);
+  padding: 15px;
+  background: #fff;
+  border-radius: 16px 16px 0px 0px;
+  margin: 30px auto;
+  width: 95%;
+  max-width: 1366px;
+
+  .title {
+    @include font(18px, 22px, 600);
+    padding: 10px 20px;
+    position: relative;
+    align-self: flex-start;
+    border-bottom: 3px solid #5030E5;
+    width: 100%;
+
+    &::before {
+      content: "";
+      height: 6px;
+      width: 6px;
+      background: #5030E5;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .card {
+    @include flex(column, center, center, 6px, 0);
+    padding: 15px 15px;
+    background: #5030E510;
+    border-radius: 16px;
+    text-align: center;
+
+    p {
+      height: fit-content;
+      min-height: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+              line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
 }

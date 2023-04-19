@@ -17,7 +17,7 @@
         <nav>
           <ul>
             <% if current_user %>
-              <li>Hi, <%= current_user.name %></li>
+              <li>Hi, <span class="purple"><%= current_user.name %></span></li>
               <li>
                 <%= link_to "Log out", logout_path %>
               </li>
