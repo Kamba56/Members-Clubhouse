@@ -39,7 +39,7 @@ a {
   color: inherit;
 }
 
-button, a {
+button, a, input[type="submit"] {
   cursor: pointer;
   border: none;
   outline: none;
@@ -153,8 +153,8 @@ main {
     .card {
       @include flex(column, center, center, 6px, 0);
       padding: 15px 15px;
+      border: .5px solid #5030E5;
       background: #5030E510;
-      border-radius: 16px;
       text-align: center;
       max-width: 310px;
 
@@ -170,6 +170,36 @@ main {
         &:hover {
           display: block;
         }
+      }
+    }
+  }
+}
+
+.form-section {
+  @include flex(column, center, center, 20px, 0);
+  padding: 30px 20px;
+  width: 95%;
+  max-width: 768px;
+  margin: 30px auto;
+  background: #5030E510;
+  height: 80vh;
+
+  form {
+    @include flex(column, center, center, 40px, 0);
+    width: 100%;
+    padding: 0 24px;
+    
+    div {
+      width: 100%;
+      input, textarea {
+        border: none;
+        height: 40px;
+        width: 100%;
+        display: block;
+      }
+
+      textarea {
+        height: 80px;
       }
     }
   }
